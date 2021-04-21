@@ -47,8 +47,8 @@ Car::Car(Car const& o){
     zeroToSixtyNs = o.getStats().zeroToSixtyNs;
     headonDragCoeff = o.getStats().headonDragCoeff;
     horsepower = o.getStats().horsepower;
-    backseatDoors = o.getBackseatDoors().backseatDoors;
-    seatCount = o.getSeatCount().seatCount;
+    backseatDoors = o.getBackseatDoors();
+    seatCount = o.getSeatCount();
 }
 Car& Car::operator=(Car const& o){
     if (this == &o){
@@ -72,8 +72,8 @@ Car& Car::operator=(Car const& o){
     zeroToSixtyNs = o.getStats().zeroToSixtyNs;
     headonDragCoeff = o.getStats().headonDragCoeff;
     horsepower = o.getStats().horsepower;
-    backseatDoors = o.getBackseatDoors().backseatDoors;
-    seatCount = o.getSeatCount().seatCount;
+    backseatDoors = o.getBackseatDoors();
+    seatCount = o.getSeatCount();
 
     return *this;
 }
