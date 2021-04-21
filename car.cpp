@@ -38,17 +38,17 @@ Car::Car(Car const& o){
         delete[] model;
         model = nullptr;
     }
-    manufacturer = new char[strlen(o.manufacturer) + 1];
-    strcpy(manufacturer, o.manufacturer);
+    manufacturer = new char[strlen(o.getManufacturer()) + 1];
+    strcpy(manufacturer, o.getManufacturer());
 
-    model = new char[strlen(o.model) + 1];
-    strcpy(model, o.model);
+    model = new char[strlen(o.getModel()) + 1];
+    strcpy(model, o.getModel());
 
-    zeroToSixtyNs = o.zeroToSixtyNs;
-    headonDragCoeff = o.headonDragCoeff;
-    horsepower = o.horsepower;
-    backseatDoors = o.backseatDoors;
-    seatCount = o.seatCount;
+    zeroToSixtyNs = o.getStats().zeroToSixtyNs;
+    headonDragCoeff = o.getStats().headonDragCoeff;
+    horsepower = o.getStats().horsepower;
+    backseatDoors = o.getBackseatDoors().backseatDoors;
+    seatCount = o.getSeatCount().seatCount;
 }
 Car& Car::operator=(Car const& o){
     if (this == &o){
@@ -63,17 +63,17 @@ Car& Car::operator=(Car const& o){
         model = nullptr;
     }
 
-    manufacturer = new char[strlen(o.manufacturer) + 1];
-    strcpy(manufacturer, o.manufacturer);
+    manufacturer = new char[strlen(o.getManufacturer()) + 1];
+    strcpy(manufacturer, o.getManufacturer());
 
-    model = new char[strlen(o.model) + 1];
-    strcpy(model, o.model);
+    model = new char[strlen(o.getModel()) + 1];
+    strcpy(model, o.getModel());
     
-    zeroToSixtyNs = o.zeroToSixtyNs;
-    headonDragCoeff = o.headonDragCoeff;
-    horsepower = o.horsepower;
-    backseatDoors = o.backseatDoors;
-    seatCount = o.seatCount;
+    zeroToSixtyNs = o.getStats().zeroToSixtyNs;
+    headonDragCoeff = o.getStats().headonDragCoeff;
+    horsepower = o.getStats().horsepower;
+    backseatDoors = o.getBackseatDoors().backseatDoors;
+    seatCount = o.getSeatCount().seatCount;
 
     return *this;
 }
