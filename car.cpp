@@ -30,6 +30,7 @@ Car::Car(char const* const manufacturerName, char const* const modelName, Perfor
     seatCount = numSeats;
 }
 Car::Car(Car const& o){
+    /*
     if (manufacturer){
         delete[] manufacturer;
         manufacturer = nullptr;
@@ -38,6 +39,8 @@ Car::Car(Car const& o){
         delete[] model;
         model = nullptr;
     }
+    */
+
     manufacturer = new char[strlen(o.getManufacturer()) + 1];
     strcpy(manufacturer, o.getManufacturer());
 
@@ -130,7 +133,12 @@ int main(){
     PerformanceStats p {60, 40, 0.8};
     Car tesla("tesla", "Z", p, 6, GullWing);
 
-    cout << tesla.getModel() << endl;
+    PerformanceStats p2 {60, 40, 0.8};
+    Car audi("audi", "Z", p, 6, GullWing);
+
+    audi = tesla;
+
+    cout << audi.getModel() << endl;
 
     return 0;
 }
