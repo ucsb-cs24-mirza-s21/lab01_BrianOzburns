@@ -124,10 +124,14 @@ void Car::recountSeats(uint8_t newSeatCount){
 void Car::reexamineDoors(DoorKind newDoorKind){
     backseatDoors = newDoorKind;
 }
+/*
 int main(){
 
     PerformanceStats p {60, 40, 0.8};
     Car tesla("tesla", "Z", p, 6, GullWing);
 
+    cout << tesla.getModel() << endl;
+
     return 0;
 }
+*/
